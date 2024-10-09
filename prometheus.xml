@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s # Scrape every 15 seconds
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'ubuntu-container'
+    static_configs:
+      - targets: ['localhost:9100'] # IP and port of Node Exporter in the Ubuntu container
+
+  - job_name: 'website'
+    static_configs:
+      - targets: ['example.com:80'] # Monitoring a simple website's HTTP status
+
